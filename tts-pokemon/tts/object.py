@@ -30,8 +30,8 @@ class Object:
         self.type: str = type_
         self.sort: int = 0
         # -Object World Data
-        self.transform: Transform = ((0, 0, 0), (0, 0, 0), (1, 1, 1))
-        self.color: Vector3 = (1, 1, 1)
+        self.transform: Transform = ((0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (1.0, 1.0, 1.0))
+        self.color: Vector3 = (1.0, 1.0, 1.0)
         self.locked: bool = False
         self.grid: bool = False
         self.snap: bool = False
