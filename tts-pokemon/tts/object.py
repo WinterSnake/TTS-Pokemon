@@ -19,7 +19,11 @@ class Object:
     """Tabletop Simulator Base Object"""
 
     # -Constructor
-    def __init__(self, type_: str, name: str) -> None:
+    def __init__(
+        self, type_: str, *, name: str = "", description: str = "",
+        notes: str = "", ui: str = "", lua: str = "", lua_state: str = "",
+        hand_object: bool = False, hidden_when_face_down: bool = False
+    ) -> None:
         # -Object Meta-Data
         self.id: int = Object.id
         Object.id += 1
@@ -37,19 +41,19 @@ class Object:
         self.sideways: bool = False
         # -Object String Data
         self.name: str = name
-        self.description: str = ""
-        self.notes: str = ""
-        self.ui: str = ""
-        self.lua: str = ""
-        self.lua_state: str = ""
+        self.description: str = description
+        self.notes: str = notes
+        self.ui: str = ui
+        self.lua: str = lua
+        self.lua_state: str = lua_state
         # -Object Data
         self.sticky: bool = True
         self.ignore_fow: bool = False
         self.drag_select: bool = True
         self.tooltip: bool = True
         self.projection: bool = False
-        self.hand_object: bool = False
-        self.hidden_when_face_down: bool = False
+        self.hand_object: bool = hand_object
+        self.hidden_when_face_down: bool = hidden_when_face_down
 
     # -Instance Methods
     def to_dict(self) -> dict[str, Any]:
