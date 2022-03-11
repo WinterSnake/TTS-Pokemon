@@ -12,7 +12,9 @@ https://pkmncards.com/card/leafeon-sword-shield-promos-swsh191/
 ```
 
 Then, to generate a TTS compatible object, you would include the file in the command line:
+
 `python tts-pokemon "my-deck.txt"`
+
 This will output 2 files: `my-deck.json` and `my-deck.png` which is the image of the very first card in your text file (in this example, it would be the Leafeon). You will then move the `json` and `png` file to your [Saved Objects folder](https://steamcommunity.com/app/286160/discussions/0/2860219962100643488/).
 
 ## TODO
