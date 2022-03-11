@@ -22,5 +22,5 @@ This will output 2 files: `my-deck.json` and `my-deck.png` which is the image of
 - [ ] GUI
 
 ## Other resources for building a deck
-[Deck Building Introduction](https://www.pokemon.com/us/strategy/designing-a-deck-from-scratch/)
-[First Pokemon TCG Deck](https://www.youtube.com/watch?v=1zJLV17NFPg)
+- [Deck Building Introduction](https://www.pokemon.com/us/strategy/designing-a-deck-from-scratch/)
+- [First Pokemon TCG Deck](https://www.youtube.com/watch?v=1zJLV17NFPg)
