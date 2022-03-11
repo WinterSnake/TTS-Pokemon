@@ -7,6 +7,8 @@
 ##-------------------------------##
 
 ## Imports
+import json
+from pathlib import Path
 from typing import Any
 
 ## Constants
@@ -59,38 +61,62 @@ class Object:
     def to_dict(self) -> dict[str, Any]:
         '''Output TTS Object to python dictionary'''
         return {
-            "GUID": f"{self.id:06X}",
-            "Name": self.type,
-            "Nickname": self.name,
-            "Description": self.description,
-            "GMNotes": self.notes,
-            "XmlUI": self.ui,
-            "LuaScript": self.lua,
-            "LuaScriptState": self.lua_state,
-            "Transform": {
+            'GUID': f"{self.id:06X}",
+            'Name': self.type,
+            'Nickname': self.name,
+            'Description': self.description,
+            'GMNotes': self.notes,
+            'XmlUI': self.ui,
+            'LuaScript': self.lua,
+            'LuaScriptState': self.lua_state,
+            'Transform': {
                 f"{label}{axis}": value
                 for label, vec in zip(("pos", "rot", "scale"), self.transform)
                 for axis, value in zip(("X", "Y", "Z"), vec)
             },
-            "ColorDiffuse": {
+            'ColorDiffuse': {
                 color: value for color, value in zip(("r", "g", "b"), self.color)
             },
-            "LayoutGroupSortIndex": self.sort,
-            "Locked": self.locked,
-            "Grid": self.grid,
-            "Snap": self.snap,
-            "IgnoreFoW": self.ignore_fow,
-            "MeasureMovement": self.measure,
-            "DragSelectable": self.drag_select,
-            "Autoraise": self.auto_raise,
-            "Sticky": self.sticky,
-            "Tooltip": self.tooltip,
-            "GridProjection": self.projection,
-            "HideWhenFaceDown": self.hidden,
-            "Hands": self.hand_object,
-            "SidewaysCard": self.sideways,
-            "HideWhenFaceDown": self.hidden_when_face_down,
+            'LayoutGroupSortIndex': self.sort,
+            'Locked': self.locked,
+            'Grid': self.grid,
+            'Snap': self.snap,
+            'IgnoreFoW': self.ignore_fow,
+            'MeasureMovement': self.measure,
+            'DragSelectable': self.drag_select,
+            'Autoraise': self.auto_raise,
+            'Sticky': self.sticky,
+            'Tooltip': self.tooltip,
+            'GridProjection': self.projection,
+            'HideWhenFaceDown': self.hidden,
+            'Hands': self.hand_object,
+            'SidewaysCard': self.sideways,
+            'HideWhenFaceDown': self.hidden_when_face_down,
         }
+
+    def to_file(self, file: str | Path) -> None:
+        ''''''
+        with open(file, 'w') as f:
+            json.dump({
+                'SaveName': "",
+                'GameMode': "",
+                'Date': "",
+                'VersionNumber': "",
+                'GameType': "",
+                'GameComplexity': "",
+                'Tags': [],
+                'Gravity': 0.5,
+                'PlayArea': 0.5,
+                'Table': "",
+                'Sky': "",
+                'Note': "",
+                'Rules': "",
+                'TabStates': {},
+                'LuaScript': "",
+                'LuaScriptState': "",
+                'XmlUI': "",
+                'ObjectStates': [self.to_dict()]
+            }, f, indent=4)
 
     # -Class Properties
     id: int = 1

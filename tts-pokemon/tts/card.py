@@ -36,8 +36,8 @@ class Card(Object):
             self.id: {
                 'FaceURL': self.front_image,
                 'BackURL': self.back_image,
-                'NumWidth': self.size.x,
-                'NumHeight': self.size.y,
+                'NumWidth': self.size[0],
+                'NumHeight': self.size[1],
                 'BackIsHidden': self.back_image_as_hidden,
                 'UniqueBack': self.unique_back,
                 'Type': self.card_type,
