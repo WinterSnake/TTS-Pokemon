@@ -52,7 +52,7 @@ async def generate_deck_images(urls: dict[Path, str]) -> None:
     async with aiohttp.ClientSession() as session:
         tasks = []
         for file, url in urls.items():
-            tasks.append(download_image(file.with_suffix('.jpg'), url))
+            tasks.append(download_image(file.with_suffix('.png'), url))
         await asyncio.gather(*tasks)
 
 

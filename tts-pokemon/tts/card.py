@@ -22,7 +22,7 @@ class Card(Object):
             "CardCustom", hand_object=True, hidden_when_face_down=True, **kwargs
         )
         self.card_type: int = 0
-        self.size: tuple[float, float] = (0.0, 0.0)  # Vector2
+        self.size: tuple[float, float] = (1, 1)  # Vector2
         self.images: tuple[str, str] = (front_image, back_image)
         self.back_image_as_hidden: bool = True
         self.unique_back: bool = False
