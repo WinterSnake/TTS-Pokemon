@@ -21,8 +21,12 @@ You can generate multiple decks at one time:
 `python tts-pokemon <deck-1> <deck-2> <deck-3> ...`
 
 ## Examples
+![image](https://user-images.githubusercontent.com/40584236/159601007-8219a352-5fef-4d32-ba61-9dd363217d8a.png)
 To generate the example deck (Rolling Tsunami):
+
 `python tts-pokemon "decks/Rolling Tsunami.txt"`
+
+![image](https://user-images.githubusercontent.com/40584236/159601013-8a908401-5658-4f00-a43d-dc8f86382130.png)
 
 ## Other resources for building a deck
 - [Deck Building Introduction](https://www.pokemon.com/us/strategy/designing-a-deck-from-scratch/)
