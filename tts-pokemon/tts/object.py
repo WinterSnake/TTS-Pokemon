@@ -35,10 +35,10 @@ class Object:
         self.transform: Transform = ((0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (1.0, 1.0, 1.0))
         self.color: Vector3 = (1.0, 1.0, 1.0)
         self.locked: bool = False
-        self.grid: bool = False
-        self.snap: bool = False
+        self.grid: bool = True
+        self.snap: bool = True
         self.measure: bool = False
-        self.auto_raise: bool = False
+        self.auto_raise: bool = True
         self.hidden: bool = False
         self.sideways: bool = False
         # -Object String Data
