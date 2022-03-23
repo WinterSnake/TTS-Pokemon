@@ -74,7 +74,7 @@ cards: list[Card] = asyncio.run(parse_pokemon_urls(urls))
 images: dict[Path, str] = {}
 for i, deck in enumerate(decks):
     path = Path(sys.argv[i + 1]).with_suffix('.json')
-    deck = Deck(*[cards[id_] for id_ in deck])
+    deck = Deck(*[cards[id_] for id_ in deck], name=path.stem)
     deck.to_file(path)
     images[path] = deck.cards[0].front_image
 # -Generate Deck Images
