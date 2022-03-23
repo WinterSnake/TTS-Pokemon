@@ -17,6 +17,9 @@ Then, to generate a TTS compatible object, you would include the file in the com
 
 This will output 2 files: `my-deck.json` and `my-deck.png` which is the image of the very first card in your text file (in this example, it would be the Leafeon). You will then move the `json` and `png` file to your [Saved Objects folder](https://steamcommunity.com/app/286160/discussions/0/2860219962100643488/).
 
+You can generate multiple decks at one time:
+`python tts-pokemon <deck-1> <deck-2> <deck-3> ...`
+
 ## Examples
 To generate the example deck (Rolling Tsunami):
 `python tts-pokemon "decks/Rolling Tsunami.txt"`
